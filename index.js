@@ -62,6 +62,12 @@ function bepaalEigenRisicoGedeelte(risicoBedrag) {
 const eigenRisicoKorting = bepaalEigenRisicoGedeelte(risico);
 premieBedrag = premieBedrag + eigenRisicoKorting;
 
+function berekenMaandBedrag(leeftijdUser, pakketKeuze, risicoBedrag) {
+  console.log("TEST!", leeftijdUser, pakketKeuze, risicoBedrag);
+}
+
+berekenMaandBedrag(leeftijd, pakket, risico);
+
 console.log("Uw bedrag per maand: €", premieBedrag);
 
 // 1. Make it work -> Input -> Output (alles mag)
