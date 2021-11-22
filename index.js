@@ -24,16 +24,15 @@ function bepaalLeeftijdPremieGedeelte(leeftijdUser) {
   console.log("HI!", leeftijdUser);
 
   if (leeftijdUser <= 18) {
-    // premieBedrag = premieBedrag - 20;
     return -20;
   } else if (leeftijdUser > 18 && leeftijdUser <= 30) {
-    // premieBedrag = premieBedrag - 10;
+    return -10;
   } else if (leeftijdUser > 30 && leeftijdUser <= 50) {
-    // no change
+    return 0;
   } else if (leeftijdUser > 50 && leeftijdUser <= 70) {
-    // premieBedrag = premieBedrag + 30;
+    return 30;
   } else if (leeftijdUser > 70) {
-    // premieBedrag = premieBedrag + 50;
+    return 50;
   } else {
     console.log("ERROR!", leeftijdUser, "input invalid");
   }
