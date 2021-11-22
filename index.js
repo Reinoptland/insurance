@@ -53,17 +53,7 @@ function bepaalPakketPremieGedeelte(pakketKeuze) {
 }
 
 const pakketPremieGedeelte = bepaalPakketPremieGedeelte(pakket);
-console.log("PAKKET:", pakketPremieGedeelte);
-
-if (pakket === "a") {
-  // no change
-} else if (pakket === "b") {
-  premieBedrag = premieBedrag + 20;
-} else if (pakket === "c") {
-  premieBedrag = premieBedrag + 50;
-} else {
-  console.log("ERROR!", pakket, "input invalid");
-}
+premieBedrag = premieBedrag + pakketPremieGedeelte;
 
 const eigenRisicoKorting = (385 - risico) * 0.04;
 
