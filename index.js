@@ -42,9 +42,19 @@ premieBedrag = premieBedrag + leeftijdPremieGedeelte;
 
 function bepaalPakketPremieGedeelte(pakketKeuze) {
   console.log("HI!", pakketKeuze);
+  if (pakketKeuze === "a") {
+    return 0;
+  } else if (pakketKeuze === "b") {
+    // premieBedrag = premieBedrag + 20;
+  } else if (pakketKeuze === "c") {
+    // premieBedrag = premieBedrag + 50;
+  } else {
+    console.log("ERROR!", pakketKeuze, "input invalid");
+  }
 }
 
-bepaalPakketPremieGedeelte(pakket);
+const pakketPremieGedeelte = bepaalPakketPremieGedeelte(pakket);
+console.log("PAKKET:", pakketPremieGedeelte);
 
 if (pakket === "a") {
   // no change
