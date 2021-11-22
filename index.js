@@ -1,24 +1,22 @@
-const readline = require("readline-sync");
+// const readline = require("readline-sync");
 
-const leeftijd = readline.questionInt("Wat is uw leeftijd: ");
+// const leeftijd = readline.questionInt("Wat is uw leeftijd: ");
 
-console.log("U bent:", leeftijd, "jaar");
+// console.log("U bent:", leeftijd, "jaar");
 
-const pakket = readline.question(`Welk pakket wilt u?
-a: Basis
-b: Uitgebreid
-c: Extra
-`);
+// const pakket = readline.question(`Welk pakket wilt u?
+// a: Basis
+// b: Uitgebreid
+// c: Extra
+// `);
 
-console.log("U koos:", pakket);
+// console.log("U koos:", pakket);
 
-const risico = readline.questionInt(
-  "Hoeveel eigen risico wilt u? (385 - 885): "
-);
+// const risico = readline.questionInt(
+//   "Hoeveel eigen risico wilt u? (385 - 885): "
+// );
 
-console.log("U wil €", risico, "eigen risico");
-
-let premieBedrag = 75;
+// console.log("U wil €", risico, "eigen risico");
 
 function bepaalLeeftijdPremieGedeelte(leeftijdUser) {
   if (leeftijdUser <= 18) {
@@ -36,10 +34,6 @@ function bepaalLeeftijdPremieGedeelte(leeftijdUser) {
   }
 }
 
-const leeftijdPremieGedeelte = bepaalLeeftijdPremieGedeelte(leeftijd);
-
-premieBedrag = premieBedrag + leeftijdPremieGedeelte;
-
 function bepaalPakketPremieGedeelte(pakketKeuze) {
   if (pakketKeuze === "a") {
     return 0;
@@ -52,23 +46,24 @@ function bepaalPakketPremieGedeelte(pakketKeuze) {
   }
 }
 
-const pakketPremieGedeelte = bepaalPakketPremieGedeelte(pakket);
-premieBedrag = premieBedrag + pakketPremieGedeelte;
-
 function bepaalEigenRisicoGedeelte(risicoBedrag) {
   return (385 - risicoBedrag) * 0.04;
 }
 
-const eigenRisicoKorting = bepaalEigenRisicoGedeelte(risico);
-premieBedrag = premieBedrag + eigenRisicoKorting;
-
 function berekenMaandBedrag(leeftijdUser, pakketKeuze, risicoBedrag) {
-  console.log("TEST!", leeftijdUser, pakketKeuze, risicoBedrag);
+  let premieBedrag = 75;
+  const leeftijdPremieGedeelte = bepaalLeeftijdPremieGedeelte(leeftijdUser);
+  premieBedrag = premieBedrag + leeftijdPremieGedeelte;
+  const pakketPremieGedeelte = bepaalPakketPremieGedeelte(pakketKeuze);
+  premieBedrag = premieBedrag + pakketPremieGedeelte;
+  const eigenRisicoKorting = bepaalEigenRisicoGedeelte(risicoBedrag);
+  premieBedrag = premieBedrag + eigenRisicoKorting;
+  console.log("MAAND BEDRAG:", premieBedrag);
 }
 
-berekenMaandBedrag(leeftijd, pakket, risico);
+berekenMaandBedrag(67, "c", 485);
 
-console.log("Uw bedrag per maand: €", premieBedrag);
+// console.log("Uw bedrag per maand: €", premieBedrag);
 
 // 1. Make it work -> Input -> Output (alles mag)
 // 2. Make it better
