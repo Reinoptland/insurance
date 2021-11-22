@@ -53,17 +53,21 @@ function bepaalEigenRisicoGedeelte(risicoBedrag) {
 function berekenMaandBedrag(leeftijdUser, pakketKeuze, risicoBedrag) {
   let premieBedrag = 75;
   const leeftijdPremieGedeelte = bepaalLeeftijdPremieGedeelte(leeftijdUser);
-  premieBedrag = premieBedrag + leeftijdPremieGedeelte;
   const pakketPremieGedeelte = bepaalPakketPremieGedeelte(pakketKeuze);
-  premieBedrag = premieBedrag + pakketPremieGedeelte;
   const eigenRisicoKorting = bepaalEigenRisicoGedeelte(risicoBedrag);
-  premieBedrag = premieBedrag + eigenRisicoKorting;
-  console.log("MAAND BEDRAG:", premieBedrag);
+
+  const maandBedrag =
+    premieBedrag +
+    leeftijdPremieGedeelte +
+    pakketPremieGedeelte +
+    eigenRisicoKorting;
+
+  return maandBedrag;
 }
 
-berekenMaandBedrag(67, "c", 485);
+const maandBedrag = berekenMaandBedrag(67, "c", 485);
 
-// console.log("Uw bedrag per maand: €", premieBedrag);
+console.log("Uw bedrag per maand: €", maandBedrag);
 
 // 1. Make it work -> Input -> Output (alles mag)
 // 2. Make it better
