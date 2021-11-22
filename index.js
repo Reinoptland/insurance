@@ -41,13 +41,12 @@ const leeftijdPremieGedeelte = bepaalLeeftijdPremieGedeelte(leeftijd);
 premieBedrag = premieBedrag + leeftijdPremieGedeelte;
 
 function bepaalPakketPremieGedeelte(pakketKeuze) {
-  console.log("HI!", pakketKeuze);
   if (pakketKeuze === "a") {
     return 0;
   } else if (pakketKeuze === "b") {
-    // premieBedrag = premieBedrag + 20;
+    return 20;
   } else if (pakketKeuze === "c") {
-    // premieBedrag = premieBedrag + 50;
+    return 50;
   } else {
     console.log("ERROR!", pakketKeuze, "input invalid");
   }
