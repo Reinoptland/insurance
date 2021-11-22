@@ -21,8 +21,6 @@ console.log("U wil €", risico, "eigen risico");
 let premieBedrag = 75;
 
 function bepaalLeeftijdPremieGedeelte(leeftijdUser) {
-  console.log("HI!", leeftijdUser);
-
   if (leeftijdUser <= 18) {
     return -20;
   } else if (leeftijdUser > 18 && leeftijdUser <= 30) {
@@ -39,7 +37,6 @@ function bepaalLeeftijdPremieGedeelte(leeftijdUser) {
 }
 
 const leeftijdPremieGedeelte = bepaalLeeftijdPremieGedeelte(leeftijd);
-console.log("PREMIE LEEFTIJD:", leeftijdPremieGedeelte);
 
 premieBedrag = premieBedrag + leeftijdPremieGedeelte;
 
