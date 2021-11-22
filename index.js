@@ -55,8 +55,11 @@ function bepaalPakketPremieGedeelte(pakketKeuze) {
 const pakketPremieGedeelte = bepaalPakketPremieGedeelte(pakket);
 premieBedrag = premieBedrag + pakketPremieGedeelte;
 
-const eigenRisicoKorting = (385 - risico) * 0.04;
+function bepaalEigenRisicoGedeelte(risicoBedrag) {
+  return (385 - risicoBedrag) * 0.04;
+}
 
+const eigenRisicoKorting = bepaalEigenRisicoGedeelte(risico);
 premieBedrag = premieBedrag + eigenRisicoKorting;
 
 console.log("Uw bedrag per maand: €", premieBedrag);
