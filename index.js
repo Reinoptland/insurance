@@ -41,19 +41,7 @@ function bepaalLeeftijdPremieGedeelte(leeftijdUser) {
 const leeftijdPremieGedeelte = bepaalLeeftijdPremieGedeelte(leeftijd);
 console.log("PREMIE LEEFTIJD:", leeftijdPremieGedeelte);
 
-if (leeftijd <= 18) {
-  premieBedrag = premieBedrag - 20;
-} else if (leeftijd > 18 && leeftijd <= 30) {
-  premieBedrag = premieBedrag - 10;
-} else if (leeftijd > 30 && leeftijd <= 50) {
-  // no change
-} else if (leeftijd > 50 && leeftijd <= 70) {
-  premieBedrag = premieBedrag + 30;
-} else if (leeftijd > 70) {
-  premieBedrag = premieBedrag + 50;
-} else {
-  console.log("ERROR!", leeftijd, "input invalid");
-}
+premieBedrag = premieBedrag + leeftijdPremieGedeelte;
 
 if (pakket === "a") {
   // no change
