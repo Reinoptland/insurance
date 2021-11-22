@@ -20,11 +20,27 @@ console.log("U wil €", risico, "eigen risico");
 
 let premieBedrag = 75;
 
-function bepaalLeeftijdPremieGedeelte() {
-  console.log("HI!");
+function bepaalLeeftijdPremieGedeelte(leeftijdUser) {
+  console.log("HI!", leeftijdUser);
+
+  if (leeftijdUser <= 18) {
+    // premieBedrag = premieBedrag - 20;
+    return -20;
+  } else if (leeftijdUser > 18 && leeftijdUser <= 30) {
+    // premieBedrag = premieBedrag - 10;
+  } else if (leeftijdUser > 30 && leeftijdUser <= 50) {
+    // no change
+  } else if (leeftijdUser > 50 && leeftijdUser <= 70) {
+    // premieBedrag = premieBedrag + 30;
+  } else if (leeftijdUser > 70) {
+    // premieBedrag = premieBedrag + 50;
+  } else {
+    console.log("ERROR!", leeftijdUser, "input invalid");
+  }
 }
 
-bepaalLeeftijdPremieGedeelte();
+const leeftijdPremieGedeelte = bepaalLeeftijdPremieGedeelte(leeftijd);
+console.log("PREMIE LEEFTIJD:", leeftijdPremieGedeelte);
 
 if (leeftijd <= 18) {
   premieBedrag = premieBedrag - 20;
