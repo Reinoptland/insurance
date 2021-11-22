@@ -40,6 +40,12 @@ const leeftijdPremieGedeelte = bepaalLeeftijdPremieGedeelte(leeftijd);
 
 premieBedrag = premieBedrag + leeftijdPremieGedeelte;
 
+function bepaalPakketPremieGedeelte() {
+  console.log("HI!");
+}
+
+bepaalPakketPremieGedeelte();
+
 if (pakket === "a") {
   // no change
 } else if (pakket === "b") {
