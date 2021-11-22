@@ -20,6 +20,12 @@ console.log("U wil €", risico, "eigen risico");
 
 let premieBedrag = 75;
 
+function bepaalLeeftijdPremieGedeelte() {
+  console.log("HI!");
+}
+
+bepaalLeeftijdPremieGedeelte();
+
 if (leeftijd <= 18) {
   premieBedrag = premieBedrag - 20;
 } else if (leeftijd > 18 && leeftijd <= 30) {
